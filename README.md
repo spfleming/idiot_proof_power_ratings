@@ -1,0 +1,1 @@
+# idiot_proof_power_ratings
