@@ -1,1 +1,9 @@
-# idiot_proof_power_ratings
+# Idiot-Proof Power Ratings
+
+This repo is a quick sketch of how one could implement a good general algorithm for predicting sports games. The applied example will be the 2023 football season, although it could extend to various sports and across years. 
+
+The general idea here is that we want to take some data about teams, predict the outcome of games - testing along the way whether that prediction is good or not, although even with a bad prediction, this will be an improvement - and then combine the predicted outcomes with the observed outcomes to find the "true" unobserved rating of a team. 
+
+We'll do a couple of fun exercises along the way. First, we'll build out a *really dumb power rating*: points per game. For a given week, we'll assume each team will score (Points Per Game - Opponent Points Allowed Per Game)/2 and will allow (Opponent Points Per Game - Points Allowed)/2. We'll create that rating for a single week of the 2023 season, and see how it does compared to the actual result (spoiler: poorly). Then, we'll build out a simple smoothing process for and show that it dramatically improves our bad estimates. The smoothing process will just be a weighted average of the two ratings: we'll code it out as half and half, but with parameters you can change to see how it affects the process. For your rating, you'll want to think long and hard to come up with a **reason** for the weighting - some kind of empirical evidence that suggests some split other than 50/50 works best. 
+
+After the simple points per game model, we'll drum up a Massey Matrix and see how that improves our ratings, just for fun. The goal of this repo is to give you a starting point for how to wrangle all this stuff and some guidance on how to make a smarter sports prediction process, regardless of how sophisticated your model is. 
